@@ -13,6 +13,10 @@
 		B0F9C2742DD8DFD90043C5EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F9C26D2DD8DFD90043C5EE /* Assets.xcassets */; };
 		B0F9C2782DD8E3930043C5EE /* AddMyListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F9C2772DD8E3930043C5EE /* AddMyListView.swift */; };
 		B0F9C27D2DD8E64D0043C5EE /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F9C27C2DD8E64D0043C5EE /* ColorPickerView.swift */; };
+		B0F9C27F2DD90A8A0043C5EE /* MyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F9C27E2DD90A8A0043C5EE /* MyListModel.swift */; };
+		B0F9C2832DD90ADC0043C5EE /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F9C2822DD90ADC0043C5EE /* UIColor+Ext.swift */; };
+		B0F9C2842DD90ADC0043C5EE /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F9C2812DD90ADC0043C5EE /* Color+Ext.swift */; };
+		B0F9C2872DD90CC60043C5EE /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F9C2862DD90CC60043C5EE /* PreviewContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,10 @@
 		B0F9C26F2DD8DFD90043C5EE /* RemindersAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersAppApp.swift; sourceTree = "<group>"; };
 		B0F9C2772DD8E3930043C5EE /* AddMyListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMyListView.swift; sourceTree = "<group>"; };
 		B0F9C27C2DD8E64D0043C5EE /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		B0F9C27E2DD90A8A0043C5EE /* MyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListModel.swift; sourceTree = "<group>"; };
+		B0F9C2812DD90ADC0043C5EE /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		B0F9C2822DD90ADC0043C5EE /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		B0F9C2862DD90CC60043C5EE /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				B0F9C26F2DD8DFD90043C5EE /* RemindersAppApp.swift */,
+				B0F9C2852DD90C9E0043C5EE /* PreviewContainer */,
+				B0F9C2802DD90AD80043C5EE /* Extensions */,
 				B0F9C27A2DD8E6060043C5EE /* Models */,
 				B0F9C2792DD8E6000043C5EE /* Views */,
 				B0F9C27B2DD8E6250043C5EE /* ReusableViews */,
@@ -85,6 +95,7 @@
 		B0F9C27A2DD8E6060043C5EE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B0F9C27E2DD90A8A0043C5EE /* MyListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -95,6 +106,23 @@
 				B0F9C27C2DD8E64D0043C5EE /* ColorPickerView.swift */,
 			);
 			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		B0F9C2802DD90AD80043C5EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B0F9C2812DD90ADC0043C5EE /* Color+Ext.swift */,
+				B0F9C2822DD90ADC0043C5EE /* UIColor+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B0F9C2852DD90C9E0043C5EE /* PreviewContainer */ = {
+			isa = PBXGroup;
+			children = (
+				B0F9C2862DD90CC60043C5EE /* PreviewContainer.swift */,
+			);
+			path = PreviewContainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +199,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0F9C27D2DD8E64D0043C5EE /* ColorPickerView.swift in Sources */,
+				B0F9C27F2DD90A8A0043C5EE /* MyListModel.swift in Sources */,
 				B0F9C2712DD8DFD90043C5EE /* MyListView.swift in Sources */,
 				B0F9C2782DD8E3930043C5EE /* AddMyListView.swift in Sources */,
+				B0F9C2832DD90ADC0043C5EE /* UIColor+Ext.swift in Sources */,
+				B0F9C2842DD90ADC0043C5EE /* Color+Ext.swift in Sources */,
+				B0F9C2872DD90CC60043C5EE /* PreviewContainer.swift in Sources */,
 				B0F9C2722DD8DFD90043C5EE /* RemindersAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MyListView: View {
   
-  let myLists: [String] = ["Reminders", "Groceries"]
+  @Query private var myLists: [MyListModel]
   
   @State private var isPresentedNewListViewSheet: Bool = false
   
@@ -19,12 +20,14 @@ struct MyListView: View {
         .font(.system(.largeTitle, design: .rounded, weight: .bold))
       
       Group {
-        ForEach(myLists, id: \.self) { myList in
+        ForEach(myLists) { myList in
             HStack {
               Image(systemName: "line.3.horizontal.circle.fill")
                 .font(.system(.title))
+                .foregroundStyle(Color(hex: myList.color) ?? Color.cyan)
               
-              Text(myList)
+              Text(myList.name)
+                .font(.system(.headline, design: .rounded))
             }
         }
         
@@ -49,4 +52,5 @@ struct MyListView: View {
 
 #Preview {
   MyListView()
+    .modelContainer(MyListModel.preview)
 }

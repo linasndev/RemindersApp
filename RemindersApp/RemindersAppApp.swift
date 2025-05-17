@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct RemindersAppApp: App {
-    var body: some Scene {
-        WindowGroup {
-            MyListView()
-        }
+  var body: some Scene {
+    WindowGroup {
+      MyListView()
+        .modelContainer(for: MyListModel.self)
     }
+  }
 }

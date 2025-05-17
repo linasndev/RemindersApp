@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddMyListView: View {
   
+  @Environment(\.modelContext) private var context
   @Environment(\.dismiss) private var dismiss
   
   @State private var listName: String = ""
@@ -39,8 +41,18 @@ struct AddMyListView: View {
         
         ToolbarItem(placement: .topBarTrailing) {
           Button("Save") {
+            guard let colorHexString = selectedColor.toHexString() else { return }
+            let newMyList = MyListModel(name: listName, color: colorHexString)
             
+            do {
+              context.insert(newMyList)
+              try context.save()
+              dismiss()
+            } catch {
+              fatalError("❌ Can't save my new list")
+            }
           }
+          .disabled(listName.isEmpty)
         }
       }
     }
