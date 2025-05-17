@@ -6,17 +6,20 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B0F9C2712DD8DFD90043C5EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F9C26E2DD8DFD90043C5EE /* ContentView.swift */; };
+		B0F9C2722DD8DFD90043C5EE /* RemindersAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F9C26F2DD8DFD90043C5EE /* RemindersAppApp.swift */; };
+		B0F9C2732DD8DFD90043C5EE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F9C26B2DD8DFD90043C5EE /* Preview Assets.xcassets */; };
+		B0F9C2742DD8DFD90043C5EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0F9C26D2DD8DFD90043C5EE /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		B0F9C25A2DD8DFAD0043C5EE /* RemindersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0F9C26B2DD8DFD90043C5EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B0F9C26D2DD8DFD90043C5EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0F9C26E2DD8DFD90043C5EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B0F9C26F2DD8DFD90043C5EE /* RemindersAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersAppApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		B0F9C25C2DD8DFAD0043C5EE /* RemindersApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RemindersApp;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B0F9C2572DD8DFAD0043C5EE /* Frameworks */ = {
@@ -32,7 +35,7 @@
 		B0F9C2512DD8DFAD0043C5EE = {
 			isa = PBXGroup;
 			children = (
-				B0F9C25C2DD8DFAD0043C5EE /* RemindersApp */,
+				B0F9C2702DD8DFD90043C5EE /* RemindersApp */,
 				B0F9C25B2DD8DFAD0043C5EE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +46,25 @@
 				B0F9C25A2DD8DFAD0043C5EE /* RemindersApp.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		B0F9C26C2DD8DFD90043C5EE /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B0F9C26B2DD8DFD90043C5EE /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B0F9C2702DD8DFD90043C5EE /* RemindersApp */ = {
+			isa = PBXGroup;
+			children = (
+				B0F9C26F2DD8DFD90043C5EE /* RemindersAppApp.swift */,
+				B0F9C26E2DD8DFD90043C5EE /* ContentView.swift */,
+				B0F9C26C2DD8DFD90043C5EE /* Preview Content */,
+				B0F9C26D2DD8DFD90043C5EE /* Assets.xcassets */,
+			);
+			path = RemindersApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +81,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				B0F9C25C2DD8DFAD0043C5EE /* RemindersApp */,
 			);
 			name = RemindersApp;
 			packageProductDependencies = (
@@ -109,6 +128,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F9C2732DD8DFD90043C5EE /* Preview Assets.xcassets in Resources */,
+				B0F9C2742DD8DFD90043C5EE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +140,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F9C2712DD8DFD90043C5EE /* ContentView.swift in Sources */,
+				B0F9C2722DD8DFD90043C5EE /* RemindersAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
