@@ -11,8 +11,8 @@ import SwiftUI
 struct RemindersAppApp: App {
   var body: some Scene {
     WindowGroup {
-      MyListView()
-        .modelContainer(for: MyListModel.self)
+      RemindersListScreen()
+        .modelContainer(for: ReminderModel.self)
     }
   }
 }

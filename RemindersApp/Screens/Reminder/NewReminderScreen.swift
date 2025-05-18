@@ -1,5 +1,5 @@
 //
-//  AddMyListView.swift
+//  NewReminderScreen.swift
 //  RemindersApp
 //
 //  Created by Linas on 17/05/2025.
@@ -8,12 +8,12 @@
 import SwiftUI
 import SwiftData
 
-struct AddMyListView: View {
+struct NewReminderScreen: View {
   
   @Environment(\.modelContext) private var context
   @Environment(\.dismiss) private var dismiss
   
-  @State private var listName: String = ""
+  @State private var title: String = ""
   @State private var selectedColor: Color = .cyan
   
   var body: some View {
@@ -24,13 +24,13 @@ struct AddMyListView: View {
           .foregroundStyle(selectedColor)
           .animation(.easeInOut, value: selectedColor)
         
-        TextField("List Name", text: $listName)
+        TextField("Reminder Name", text: $title)
           .textFieldStyle(.roundedBorder)
           .padding(.horizontal, 44)
         
         ColorPickerView(selectedColor: $selectedColor)
       }
-      .navigationTitle("New List")
+      .navigationTitle("New Reminder")
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
         ToolbarItem(placement: .topBarLeading) {
@@ -42,7 +42,7 @@ struct AddMyListView: View {
         ToolbarItem(placement: .topBarTrailing) {
           Button("Save") {
             guard let colorHexString = selectedColor.toHexString() else { return }
-            let newMyList = MyListModel(name: listName, color: colorHexString)
+            let newMyList = ReminderModel(title: title, color: colorHexString)
             
             do {
               context.insert(newMyList)
@@ -52,7 +52,7 @@ struct AddMyListView: View {
               fatalError("❌ Can't save my new list")
             }
           }
-          .disabled(listName.isEmpty)
+          .disabled(title.isEmpty)
         }
       }
     }
@@ -60,5 +60,5 @@ struct AddMyListView: View {
 }
 
 #Preview {
-  AddMyListView()
+  NewReminderScreen()
 }
