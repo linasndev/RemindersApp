@@ -20,7 +20,16 @@ struct RemindersDetailScreen: View {
       if let items = reminder.items {
         List {
           ForEach(items) { item in
-            Text(item.title)
+            ItemCellView(item: item, isSelected: false) { event in
+              switch event {
+              case .onChecked(let item, let checked):
+                print("onChecked")
+              case .onSelect(let item):
+                print("onSelect")
+              case .onInfoSelected(let item):
+                print("onInfoSelected")
+              }
+            }
           }
         }
         .listStyle(.plain)
