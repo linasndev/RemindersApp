@@ -18,7 +18,7 @@ class ItemModel {
   
   var reminders: ReminderModel?
   
-  init(itemReminderDate: Date? = nil, itemReminderTime: Date? = nil, title: String, notes: String? = nil, isCompleted: Bool , reminders: ReminderModel? = nil) {
+  init(itemReminderDate: Date? = nil, itemReminderTime: Date? = nil, title: String, notes: String? = nil, isCompleted: Bool = false , reminders: ReminderModel? = nil) {
     self.itemReminderDate = itemReminderDate
     self.itemReminderTime = itemReminderTime
     self.title = title

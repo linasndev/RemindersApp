@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B003B2222DDA3AE30000589C /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B003B2212DDA3AE30000589C /* String+Ext.swift */; };
 		B0F2204D2DD9BE1700A8E641 /* RemindersDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F2204C2DD9BE1700A8E641 /* RemindersDetailScreen.swift */; };
 		B0F9C2712DD8DFD90043C5EE /* RemindersListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F9C26E2DD8DFD90043C5EE /* RemindersListScreen.swift */; };
 		B0F9C2722DD8DFD90043C5EE /* RemindersAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0F9C26F2DD8DFD90043C5EE /* RemindersAppApp.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B003B2212DDA3AE30000589C /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		B0F2204C2DD9BE1700A8E641 /* RemindersDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersDetailScreen.swift; sourceTree = "<group>"; };
 		B0F9C25A2DD8DFAD0043C5EE /* RemindersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0F9C26B2DD8DFD90043C5EE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -56,13 +58,6 @@
 				B0F9C2772DD8E3930043C5EE /* NewReminderScreen.swift */,
 			);
 			path = Reminder;
-			sourceTree = "<group>";
-		};
-		B0F2204F2DD9BF1F00A8E641 /* Item */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Item;
 			sourceTree = "<group>";
 		};
 		B0F9C2512DD8DFAD0043C5EE = {
@@ -108,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				B0F2204E2DD9BF1800A8E641 /* Reminder */,
-				B0F2204F2DD9BF1F00A8E641 /* Item */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -135,6 +129,7 @@
 			children = (
 				B0F9C2812DD90ADC0043C5EE /* Color+Ext.swift */,
 				B0F9C2822DD90ADC0043C5EE /* UIColor+Ext.swift */,
+				B003B2212DDA3AE30000589C /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -177,7 +172,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					B0F9C2592DD8DFAD0043C5EE = {
 						CreatedOnToolsVersion = 16.2;
@@ -230,6 +225,7 @@
 				B0F2204D2DD9BE1700A8E641 /* RemindersDetailScreen.swift in Sources */,
 				B0F9C2872DD90CC60043C5EE /* PreviewContainer.swift in Sources */,
 				B0F9C2722DD8DFD90043C5EE /* RemindersAppApp.swift in Sources */,
+				B003B2222DDA3AE30000589C /* String+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +267,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 95H4F25F77;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -334,6 +331,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 95H4F25F77;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -363,7 +361,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RemindersApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 95H4F25F77;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -392,7 +389,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RemindersApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 95H4F25F77;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
