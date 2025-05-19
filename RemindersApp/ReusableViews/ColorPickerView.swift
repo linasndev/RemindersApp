@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ColorPickerView: View {
   
-  @Binding var selectedColor: Color
+  @Binding var selectedColor: String
   
-  let colors: [Color] = [.red, .green, .cyan, .indigo, .pink, .orange]
+  let colors: [String] = ["355070", "6a4c93", "0077b6", "f77f00", "386641", "1d2d44"]
   
   var body: some View {
     HStack {
@@ -19,7 +19,7 @@ struct ColorPickerView: View {
         ZStack {
           Circle()
             .fill()
-            .foregroundStyle(color)
+            .foregroundStyle(Color(hex: color) ?? Color.black)
             .padding(2)
           
           Circle()
@@ -38,5 +38,5 @@ struct ColorPickerView: View {
 }
 
 #Preview {
-  ColorPickerView(selectedColor: .constant(.cyan))
+  ColorPickerView(selectedColor: .constant("0077b6"))
 }

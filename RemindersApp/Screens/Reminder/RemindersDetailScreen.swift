@@ -10,27 +10,43 @@ import SwiftData
 
 struct RemindersDetailScreen: View {
   
+  @Environment(\.modelContext) private var context
+  
   @State private var title: String = ""
   @State private var isPresentedNewItemAlertSheet: Bool = false
+  @State private var activeSelectedItem: ItemModel?
+  @State private var itemToEditInPopover: ItemModel?
   
   let reminder: ReminderModel
+  
+  private let delayToCompleted: Delay = Delay(seconds: 2.0)
   
   var body: some View {
     VStack {
       if let items = reminder.items {
         List {
-          ForEach(items) { item in
-            ItemCellView(item: item, isSelected: false) { event in
+          ForEach(items.filter { !$0.isCompleted }) { item in
+            ItemCellView(item: item, isSelected: isItemSelected(item)) { event in
               switch event {
-              case .onChecked(let item, let checked):
-                print("onChecked")
+              case .onChecked(let item, let isChecked):
+                //Cancel pending task
+                delayToCompleted.cancel()
+                
+                //Perform work
+                delayToCompleted.performWork {
+                  item.isCompleted = isChecked
+                }
+                
               case .onSelect(let item):
                 print("onSelect")
+                activeSelectedItem = item
               case .onInfoSelected(let item):
                 print("onInfoSelected")
+                itemToEditInPopover = item
               }
             }
           }
+          .onDelete(perform: deleteItem)
         }
         .listStyle(.plain)
         
@@ -61,6 +77,9 @@ struct RemindersDetailScreen: View {
       }
       .disabled(!isFormValid)
     }
+    .popover(item: $itemToEditInPopover) { item in
+      EditItemScreen(item: item)
+    }
   }
   
   private func saveItem() {
@@ -70,6 +89,25 @@ struct RemindersDetailScreen: View {
   
   private var isFormValid: Bool {
     !title.isEmptyOrWhitespace
+  }
+  
+  private func isItemSelected(_ item: ItemModel) -> Bool {
+    item.persistentModelID == activeSelectedItem?.persistentModelID
+  }
+  
+  //TODO: Need fix, because it's not delete from filter array.
+  private func deleteItem(_ indexSet: IndexSet) {
+    indexSet.forEach { index in
+      if let items = reminder.items {
+        let deleteItem = items[index]
+        do {
+          context.delete(deleteItem)
+          try context.save()
+        } catch {
+          fatalError("Can't delete item")
+        }
+      }
+    }
   }
 }
 

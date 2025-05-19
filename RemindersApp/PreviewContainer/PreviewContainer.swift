@@ -16,8 +16,8 @@ extension ReminderModel {
     
     let shopping = ReminderModel(title: "Shopping", color: "355070", items: [
       ItemModel(
-        itemReminderDate: Calendar.current.date(byAdding: .day, value: 1, to: Date()),
-        itemReminderTime: Calendar.current.date(bySettingHour: 10, minute: 30, second: 0, of: Date()),
+        itemReminderDate: Date(),
+        itemReminderTime: Date(),
         title: "Buy milk",
         notes: "Low-fat if available",
         isCompleted: false
@@ -48,8 +48,8 @@ extension ReminderModel {
         isCompleted: false
       ),
       ItemModel(
-        itemReminderDate: Calendar.current.date(byAdding: .day, value: 2, to: Date()),
-        itemReminderTime: Calendar.current.date(bySettingHour: 10, minute: 30, second: 0, of: Date()),
+        itemReminderDate: Date(),
+        itemReminderTime: Date(),
         title: "Get fruits",
         notes: "Apples and bananas",
         isCompleted: false
@@ -149,4 +149,5 @@ extension ReminderModel {
     return container
   }
 }
+
 

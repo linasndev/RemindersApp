@@ -48,15 +48,28 @@ struct NewEditReminderScreen: View {
         }
         
         ToolbarItem(placement: .topBarTrailing) {
-          Button("Save") {
-            let newMyList = ReminderModel(title: title, color: selectedColor)
-            
-            do {
+          Button(reminder != nil ? "Update" : "Save") {
+            if let reminder {
+              reminder.title = title
+              reminder.color = selectedColor
+              
+              do {
+                try context.save()
+                dismiss()
+              } catch {
+                fatalError("❌ Can't update reminder")
+              }
+              
+            } else {
+              let newMyList = ReminderModel(title: title, color: selectedColor)
               context.insert(newMyList)
-              try context.save()
-              dismiss()
-            } catch {
-              fatalError("❌ Can't save my new list")
+              
+              do {
+                try context.save()
+                dismiss()
+              } catch {
+                fatalError("❌ Can't save new reminder")
+              }
             }
           }
           .disabled(title.isEmpty)
