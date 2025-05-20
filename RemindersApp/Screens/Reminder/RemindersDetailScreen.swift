@@ -10,16 +10,28 @@ import SwiftData
 
 struct RemindersDetailScreen: View {
   
+  @Query private var items: [ItemModel]
+  
   @State private var title: String = ""
   @State private var isPresentedNewItemAlertSheet: Bool = false
   
   let reminder: ReminderModel
   
+  init(reminder: ReminderModel) {
+    self.reminder = reminder
+    let reminderId = reminder.persistentModelID
+    let predicate = #Predicate<ItemModel> { item in
+      item.reminders?.persistentModelID == item.persistentModelID && !item.isCompleted
+    }
+    
+    _items = Query(filter: predicate)
+  }
+  
   var body: some View {
     VStack {
       if let items = reminder.items {
        
-        ItemsListView(items: items.filter { !$0.isCompleted })
+        ItemsListView(items: items)
         
         Spacer()
                 
