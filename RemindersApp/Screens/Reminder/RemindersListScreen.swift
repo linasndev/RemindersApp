@@ -59,7 +59,6 @@ struct RemindersListScreen: View {
   var body: some View {
     NavigationStack {
       VStack {
-        
         VStack {
           HStack {
             ItemsStatsView(icon: "calendar", title: "Today", count: todaysItems.count)
@@ -134,15 +133,9 @@ struct RemindersListScreen: View {
           RemindersDetailScreen(reminder: reminder)
         }
         .navigationDestination(item: $selectedItemsStatsType) { itemsStatsType in
-          NavigationStack {
-            List {
-              ForEach(showItems(for: itemsStatsType)) { item in
-                Text(item.title)
-              }
-            }
+          ItemsListView(items: showItems(for: itemsStatsType))
             .navigationTitle(itemsStatsType.title)
             .navigationBarTitleDisplayMode(.large)
-          }
         }
       }
     }

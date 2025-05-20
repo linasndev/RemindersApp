@@ -11,7 +11,6 @@ import SwiftData
 enum ItemCellEvents {
   case onChecked(ItemModel, Bool)
   case onSelect(ItemModel)
-  case onInfoSelected(ItemModel)
 }
 
 struct ItemCellView: View {
@@ -19,8 +18,6 @@ struct ItemCellView: View {
   @State private var isChecked: Bool = false
   
   let item: ItemModel
-  
-  let isSelected: Bool
   let onEvent: (ItemCellEvents) -> Void
   
   var body: some View {
@@ -64,13 +61,6 @@ struct ItemCellView: View {
       
       Spacer()
       
-      Image(systemName: "info.circle")
-        .padding(.trailing, 10)
-        .font(.title)
-        .opacity(isSelected ? 1 : 0)
-        .onTapGesture {
-          onEvent(.onInfoSelected(item))
-        }
     }
     .contentShape(Rectangle())
     .onTapGesture {
@@ -95,7 +85,7 @@ struct ItemCellViewContainer: View {
   @Query(sort: \ItemModel.title) private var items: [ItemModel]
   
   var body: some View {
-    ItemCellView(item: items[0], isSelected: true, onEvent: {_ in })
+    ItemCellView(item: items[0], onEvent: {_ in })
   }
 }
 
