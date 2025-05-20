@@ -7,7 +7,7 @@
 
 import SwiftUI
 import SwiftData
-
+import UserNotifications
 
 struct EditItemScreen: View {
   
@@ -40,8 +40,6 @@ struct EditItemScreen: View {
             Toggle(isOn: $isShowReminderDate.animation(.bouncy)) {
               Text("Reminder Date")
             }
-            
-            
           }
           
           if isShowReminderDate {
@@ -76,6 +74,9 @@ struct EditItemScreen: View {
         
         isShowReminderDate = item.itemReminderDate != nil
         isShowReminderTime = item.itemReminderDate != nil
+        
+        //request authorization notification. It's very simple
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _ , _ in }
       }
       .onChange(of: isShowReminderDate) { _, newValue in
         if !newValue {
@@ -91,13 +92,24 @@ struct EditItemScreen: View {
           itemReminderTime = Date()
         }
       }
-      .toolbar(content: {
-        ToolbarItem(placement: .topBarTrailing) {
-          Button("Save") {
-            item.title = title
-            item.notes = notes.isEmpty ? nil : notes
-            item.itemReminderDate = itemReminderDate
-            item.itemReminderTime = itemReminderTime
+      .toolbar(
+        content: {
+          ToolbarItem(placement: .topBarTrailing) {
+            Button("Save") {
+              item.title = title
+              item.notes = notes.isEmpty ? nil : notes
+              item.itemReminderDate = itemReminderDate
+              item.itemReminderTime = itemReminderTime
+              
+              //schedule a local notification
+              NotificationManager.scheduleNotification(
+                userdata: UserData(
+                  title: item.title,
+                  body: item.notes,
+                  date: item.itemReminderDate,
+                  time: item.itemReminderTime
+                )
+              )
             
             do {
              try context.save()
